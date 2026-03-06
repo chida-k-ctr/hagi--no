@@ -1,0 +1,65 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=M+PLUS+Rounded+1c:wght@400;700;900&display=swap');
+
+@theme {
+  --font-sans: "M PLUS Rounded 1c", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Bungee", cursive;
+}
+
+body {
+  @apply bg-blue-50 text-blue-900 overflow-x-hidden;
+  background-image: radial-gradient(#1e3a8a 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-color: #f0f9ff;
+}
+
+.comic-border {
+  border: 4px solid #1e3a8a;
+  box-shadow: 8px 8px 0px #1e3a8a;
+}
+
+.comic-border-sm {
+  border: 3px solid #1e3a8a;
+  box-shadow: 4px 4px 0px #1e3a8a;
+}
+
+.comic-button {
+  @apply relative px-8 py-4 font-display text-2xl transition-all duration-200 active:translate-x-1 active:translate-y-1 active:shadow-none;
+  border: 4px solid #1e3a8a;
+  box-shadow: 6px 6px 0px #1e3a8a;
+}
+
+.speech-bubble {
+  @apply relative bg-white p-4 rounded-2xl;
+  border: 3px solid #1e3a8a;
+  box-shadow: 4px 4px 0px #1e3a8a;
+}
+
+.speech-bubble::after {
+  content: '';
+  @apply absolute -bottom-4 left-10 w-0 h-0 border-l-[15px] border-l-transparent border-r-[15px] border-r-transparent border-t-[20px] border-t-[#1e3a8a];
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.halftone {
+  background-image: radial-gradient(rgba(30, 58, 138, 0.1) 2px, transparent 2px);
+  background-size: 8px 8px;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  animation: marquee 15s linear infinite;
+}
